@@ -1,0 +1,11 @@
+
+    <div class="movies">
+        <div class="movie-card" *ngIf="movie.poster_path">
+            <img [src]="tmdbConfig.imagePath+movie.poster_path" alt="movie image"/>
+            <h4>{{movie.original_title}}</h4>
+            <p>Movie description</p>
+        </div>
+    </div>
+
+
+

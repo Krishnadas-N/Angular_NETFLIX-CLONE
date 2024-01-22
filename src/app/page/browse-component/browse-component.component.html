@@ -1,0 +1,35 @@
+<div class="browse-page">
+
+    <app-header-component></app-header-component>
+    <div class="banner">
+        @if(banner && banner.videoKey){
+            <iframe name="youtube"
+            class="banner-video"
+            [src]="
+                domSanitise.bypassSecurityTrustResourceUrl(
+                'https://www.youtube.com/embed/' + banner.videoKey + '?autoplay=1&mute=1&showinfo=0&controls=0'
+                )
+            "
+            style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;"
+            frameborder="0"
+    ></iframe>
+        }@else{
+        <img class="banner-img" [src]=tmdbConfig.imagePath+banner.poster_path alt="Baneer image"/>
+        }
+        
+        <div class="banner-movie-info">
+            <h4 class="banner-heading">{{ banner.original_title }}</h4>
+            <p class="banner-description">{{ banner.overview | slice:0:350}}</p>
+            <div class="banner-action">
+              <button type="button" class="play-btn">Play</button>
+              <button type="button" class="info-btn">More Info</button>
+            </div>
+          </div>
+    </div>
+    <div class="movie-categories px-16 relative z-50 -mt-40">
+        <app-movie-category [title]="List[0]" [movieList]="NewReleases"></app-movie-category>
+        <app-movie-category [title]=List[1] [movieList]="topRatedMovies"></app-movie-category>
+        <app-movie-category [title]=List[2] [movieList]="popularMovies"></app-movie-category>
+        <app-movie-category  [title]=List[3] [movieList]='UpcomingMovies'></app-movie-category>
+     </div>
+</div>
