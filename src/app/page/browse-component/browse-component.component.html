@@ -1,5 +1,5 @@
 <div class="browse-page">
-
+       
     <app-header-component></app-header-component>
     <div class="banner">
         @if(banner && banner.videoKey){
@@ -10,8 +10,9 @@
                 'https://www.youtube.com/embed/' + banner.videoKey + '?autoplay=1&mute=1&showinfo=0&controls=0'
                 )
             "
-            style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;"
-            frameborder="0"
+           
+            width="1366" height="768"
+            frameborder="0"allowfullscreen
     ></iframe>
         }@else{
         <img class="banner-img" [src]=tmdbConfig.imagePath+banner.poster_path alt="Baneer image"/>
@@ -26,10 +27,12 @@
             </div>
           </div>
     </div>
-    <div class="movie-categories px-16 relative z-50 -mt-40">
+    <div class="movie-categories px-16 relative z-50 mt-40">
         <app-movie-category [title]="List[0]" [movieList]="NewReleases"></app-movie-category>
         <app-movie-category [title]=List[1] [movieList]="topRatedMovies"></app-movie-category>
         <app-movie-category [title]=List[2] [movieList]="popularMovies"></app-movie-category>
         <app-movie-category  [title]=List[3] [movieList]='UpcomingMovies'></app-movie-category>
      </div>
 </div>
+
+<app-footer></app-footer>

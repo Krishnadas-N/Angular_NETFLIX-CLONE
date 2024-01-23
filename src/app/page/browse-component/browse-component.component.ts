@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import {Movie} from '../../types/movies'
 import { tmdbConfig } from '../../constants/config';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FooterComponent } from '../../components/footer/footer.component';
+// import {YouTubePlayer} from '@angular/youtube-player';
 
 @Component({
   selector: 'app-browse-component',
   standalone: true,
-  imports: [CommonModule, HeaderComponentComponent, MovieCategoryComponent],
+  imports: [CommonModule, HeaderComponentComponent, MovieCategoryComponent,FooterComponent],
   providers: [HttpClientModule],
   templateUrl: './browse-component.component.html',
   styleUrl: './browse-component.component.scss'

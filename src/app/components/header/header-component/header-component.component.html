@@ -1,3 +1,35 @@
-<div class="header">
-    <img [src]="logoUrl" alt="logo" class="w-52" />
-  </div>
+
+<nav [class.nav_black]="isScrolled">
+    <div class="left">
+      <img [src]="logoUrl" alt="Log" class="brand" />
+      <div class="nav-item small">Browse</div>
+      <ul class="nav-items">
+        <li class="nav-item">Home</li>
+        <li class="nav-item">TV Shows</li>
+        <li class="nav-item">Movies</li>
+        <li class="nav-item">New & Popular</li>
+        <li class="nav-item">My List</li>
+        <li class="nav-item">Browse by Languages</li>
+      </ul>
+    </div>
+    <div class="right">
+      <ul class="nav-icons">
+       <!-- In your Angular component template -->
+      <div class="search" (click)="toggleInput($event)">
+        <input class="input" [class.toggle]="isInputToggled" type="text" placeholder="Titles, people, genres">
+        <img class="img" src="https://static.vecteezy.com/system/resources/previews/000/442/657/non_2x/vector-search-icon.jpg" alt="">
+      </div>
+
+        <div class="nav-item icon">
+          <i data-feather="bell"></i>
+        </div>
+        <div class="nav-item icon">
+          <img
+            src="https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY20DrC9-11ewwAs6nfEgb1vrORxRPP9IGmlW1WtKuaLIz8VxCx5NryzDK3_ez064IsBGdXjVUT59G5IRuFdqZlCJCneepU.png?r=229"
+            alt="profile icon"
+          />
+          <i class="hide" data-feather="chevron-down"></i>
+        </div>
+      </ul>
+    </div>
+  </nav>
